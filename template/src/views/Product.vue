@@ -1,43 +1,43 @@
 <template>
-    <v-container>
-        <v-card>
-            <v-carousel hide-controls>
-                <v-carousel-item
-                    contain
-                    v-for="(image, index) in product.images"
-                    :key="index"
-                    :src="image">
-                </v-carousel-item>
-            </v-carousel>
-            <v-card-title primary-title>
-                <div>
-                    <h3 class="headline">
-                        <span class="mr-3">{{product.name}}</span> 
-                        <span class="blue--text">${{product.price}}</span>    
-                    </h3>
+    <div class="product-page">
+        <div class="product">
+            <div class="product_slider">
+                <img :src="product.images[0]" alt="">
+            </div>
+            <div class="product_info">
+                <div class="product_info-title">
+                    <h1>{{product.name}}</h1>
                 </div>
-                <div>{{product.description}}</div>
-                <div class="specifications mt-3">
-                    <h3 class="title">Specifications</h3>
-                    <v-list>
-                        <v-list-tile 
-                            v-for="(value, key) in product.specifications" 
-                            :key="key">
-                            <v-list-tile-title>
-                                <span class="text-capitalize">{{key}}: </span>
-                                <span>{{value}}</span>
-                            </v-list-tile-title>
-                        </v-list-tile>
-                    </v-list>
+                <div class="product_info-price">
+                    <h2>${{product.price}}</h2>
                 </div>
-            </v-card-title>
-            <v-card-actions>
-                <v-btn block color="success" @click="setToShoppingCart(product)">
-                    Add to cart
-                </v-btn>
-            </v-card-actions>
-        </v-card>
-    </v-container>
+                <div class="product_info-descripition">
+                    <h3>Descripition</h3>
+                    <p>{{product.description}}</p>
+                </div>  
+                <div class="product_info-specifications">
+                    <h3>Specifications</h3>
+                    <div v-for="(item, key) in product.specifications" :key="key">
+                        <div class="text-capitalize"><b>{{key}}:</b></div>
+                        <div>{{item}}</div>
+                    </div>
+                </div>  
+                <div class="product_info-actions">
+                    <div class="action-buttons">
+                        <v-btn 
+                            class="text-none" 
+                            color="success" 
+                            depressed
+                            @click="setToShoppingCart(product)">Add to Cart</v-btn>
+                        <v-btn 
+                            class="text-none" 
+                            color="error" 
+                            depressed>Buy Now</v-btn>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 import ProductServices from '../services/Products.js' 
@@ -79,3 +79,18 @@ export default {
     }
 }
 </script>
+<style>
+.product{
+    display: flex;
+}
+.product_info-specifications div{
+    display: flex;
+    padding: 2px;
+    font-size: 1.2rem;
+    /* max-width: 500px; */
+}
+.product_info-descripition p{
+    padding: 5px;
+    max-width: 500px;
+}
+</style>
