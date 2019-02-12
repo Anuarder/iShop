@@ -35,7 +35,6 @@ export default {
     justify-content: space-between;
     font-size: 1.3rem;
     padding: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
     line-height: 2rem;
 }
 .navigation_logo{

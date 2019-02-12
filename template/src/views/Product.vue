@@ -2,14 +2,21 @@
     <div class="product-page">
         <div class="product">
             <div class="product_slider">
-                <img :src="product.images[0]" alt="">
+                <v-carousel light hide-delimiters height="700" class="product_slider-carousel">
+                    <v-carousel-item
+                        contain
+                        v-for="(image, index) in product.images"
+                        :key="index"
+                        :src="image">
+                    </v-carousel-item>
+                </v-carousel>
             </div>
             <div class="product_info">
                 <div class="product_info-title">
                     <h1>{{product.name}}</h1>
                 </div>
-                <div class="product_info-price">
-                    <h2>${{product.price}}</h2>
+                <div class="product_info-price mb-3">
+                    <h2>Price: ${{product.price}}</h2>
                 </div>
                 <div class="product_info-descripition">
                     <h3>Descripition</h3>
@@ -17,22 +24,17 @@
                 </div>  
                 <div class="product_info-specifications">
                     <h3>Specifications</h3>
-                    <div v-for="(item, key) in product.specifications" :key="key">
-                        <div class="text-capitalize"><b>{{key}}:</b></div>
-                        <div>{{item}}</div>
-                    </div>
+                    <ul v-for="(item, key) in product.specifications" :key="key">
+                        <li><span class="text-capitalize body-2">{{key}}</span>: {{item}}</li>
+                    </ul>
                 </div>  
-                <div class="product_info-actions">
+                <div class="product_info-actions mt-3">
                     <div class="action-buttons">
                         <v-btn 
                             class="text-none" 
                             color="success" 
                             depressed
                             @click="setToShoppingCart(product)">Add to Cart</v-btn>
-                        <v-btn 
-                            class="text-none" 
-                            color="error" 
-                            depressed>Buy Now</v-btn>
                     </div>
                 </div>
             </div>
@@ -80,17 +82,36 @@ export default {
 }
 </script>
 <style>
-.product{
-    display: flex;
+.product_slider-carousel{
+    box-shadow: none;
 }
-.product_info-specifications div{
+.product{
+    margin-top: 50px;
     display: flex;
-    padding: 2px;
     font-size: 1.2rem;
-    /* max-width: 500px; */
+}
+.product_slider{
+    width: 50%;
+    
+}
+.product_info{
+    margin-left: 50px; 
+}
+.product_info-title{
+    font-size: 1.6rem;
+}
+.product_info-price{
+    font-size: 1.4rem;
+    color: #002c6e;
+}
+.product_info-descripition h3,
+.product_info-specifications h3{
+    font-size: 1.4rem;
 }
 .product_info-descripition p{
-    padding: 5px;
     max-width: 500px;
+}
+.product_info-actions button{
+    width: 100px
 }
 </style>

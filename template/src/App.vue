@@ -6,6 +6,7 @@
 <style>
 #app{
 	background-color: #fff;
+	font-family: 'Montserrat', sans-serif;
 }
 img{
     object-fit: cover;
