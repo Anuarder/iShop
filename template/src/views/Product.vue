@@ -74,7 +74,8 @@ export default {
             let data = {
                 id: value._id,
                 name: value.name,
-                price: value.price
+                price: value.price,
+                image: value.images[0]
             }
             this.$store.dispatch('setToShoppingCart', data);
         }

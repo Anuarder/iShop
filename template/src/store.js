@@ -31,6 +31,7 @@ export default new Vuex.Store({
                 let shopData = {
                     id: product.id,
                     name: product.name,
+                    image: product.image,
                     count: count,
                     totalPrice: product.price
                 }
@@ -45,6 +46,15 @@ export default new Vuex.Store({
                 totalCount: 0,
                 totalPrice: 0
             };
+        },
+        deleteItemFromCart(state, item){
+            state.shoppingCart.products.forEach((el, index) => {
+                if(el.id === item.id){
+                    state.shoppingCart.products.splice(index, 1);
+                    state.shoppingCart.totalCount -= item.count;
+                    state.shoppingCart.totalPrice -= item.totalPrice
+                }
+            });
         }
     },
     actions: {
@@ -53,6 +63,9 @@ export default new Vuex.Store({
         },
         clearShoppingCart({ commit }){
             commit('clearShoppingCart');
+        },
+        deleteItemFromCart({commit}, item){
+            commit('deleteItemFromCart', item)
         }
     }
 })
