@@ -1,0 +1,99 @@
+inputBlockStyle(){
+    div{
+        padding: 1rem;
+        input{
+            outline: none;
+            margin: 5px;
+            padding: 1rem;
+            width: 100%
+            border: 1px solid #474747;
+            &:focus{
+                border: 1px solid #e24647;
+            
+                &::-webkit-input-placeholder{
+                    color: #e24647;
+                }
+            }
+        }
+    }
+}
+buttonStyle(){
+    background-color: #3f9b43;
+    padding: .5rem;   
+    color: #fff;
+    width 6rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.22);
+    &:hover{
+        background-color: #147919    
+    }
+}
+
+.empty{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.shopping-cart_table {
+    table{
+        width: 100vw;
+        text-align: left;
+    }
+    img{
+        max-width: 4em;
+    }
+}
+    
+.product-count {
+    input{
+        max-width: 6rem;
+        padding: 3px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+}
+
+.shopping-cart_actions{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    button{
+        buttonStyle();
+    } 
+}
+
+.shopping-cart_form{
+    display: flex;
+    justify-content: center;
+    h2{
+        text-align: center;
+    }
+    .user-info{
+       display: flex;
+        inputBlockStyle();
+    }   
+
+    .user-card{
+        .card-info{
+            display: flex;
+            inputBlockStyle();
+        }    
+        .card-block{
+            display: flex;    
+            justify-content: center;
+        }
+    }
+
+    .form-button{
+        text-align: right;
+        margin-right: 10px;
+        button{
+            buttonStyle();
+        }
+    }
+}

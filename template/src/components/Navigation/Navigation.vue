@@ -24,46 +24,8 @@
     </div>
 </template>
 <script>
+import './navigation.styl'
 export default {
     props: ['count']
 }
 </script>
-
-<style>
-.navigation{
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
-    padding: 1.5rem;
-    line-height: 2rem;
-}
-.navigation_logo{
-    font-size: 2rem;
-    font-weight: 800;
-}
-.search_input{
-    outline: none;
-    border-bottom: 1px solid #ddd;
-}
-.search_input:focus{
-    border-bottom: 1px solid #e24647;
-}
-.search_input:focus::-webkit-input-placeholder{
-   color: #e24647;
-}
-.navigation_actions, 
-.navigation_links{
-    display: flex;
-}
-.navigation_links div{
-    margin-left: 5rem;
-}
-.navigation_logo a, 
-.navigation_links div a{
-    text-decoration: none;
-    color: black;
-}
-.navigation_links div a:hover{
-    color: #e24647;
-}
-</style>

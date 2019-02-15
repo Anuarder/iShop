@@ -8,8 +8,8 @@
     </v-container>
 </template>
 <script>
-import Product from '../components/ProductCard'
-import ProductsServices from '../services/Products.js'
+import Product from '@/components/ProductCard/ProductCard'
+import ProductsServices from '@/services/Products.js'
 export default {
     components: {
         Product

@@ -30,11 +30,7 @@
                 </div>  
                 <div class="product_info-actions mt-3">
                     <div class="action-buttons">
-                        <v-btn 
-                            class="text-none" 
-                            color="success" 
-                            depressed
-                            @click="setToShoppingCart(product)">Add to Cart</v-btn>
+                        <button @click="setToShoppingCart(product)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -42,7 +38,8 @@
     </div>
 </template>
 <script>
-import ProductServices from '../services/Products.js' 
+import './product.styl'
+import ProductServices from '@/services/Products.js' 
 export default {
     data(){
         return{
@@ -82,37 +79,3 @@ export default {
     }
 }
 </script>
-<style>
-.product_slider-carousel{
-    box-shadow: none;
-}
-.product{
-    margin-top: 50px;
-    display: flex;
-    font-size: 1.2rem;
-}
-.product_slider{
-    width: 50%;
-    
-}
-.product_info{
-    margin-left: 50px; 
-}
-.product_info-title{
-    font-size: 1.6rem;
-}
-.product_info-price{
-    font-size: 1.4rem;
-    color: #002c6e;
-}
-.product_info-descripition h3,
-.product_info-specifications h3{
-    font-size: 1.4rem;
-}
-.product_info-descripition p{
-    max-width: 500px;
-}
-.product_info-actions button{
-    width: 100px
-}
-</style>
