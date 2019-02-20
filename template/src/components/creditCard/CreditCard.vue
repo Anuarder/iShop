@@ -1,5 +1,5 @@
 <template>
-   <div class="card">
+   <div class="card" :class="hover ? 'hover-card' : ''">
         <div
             :class="{'card__front-rotate' : rotate}" 
             class="card__front card__part"
@@ -50,7 +50,7 @@
 </template>
 <script>
 export default {
-    props: ['data', 'rotate', 'color'],
+    props: ['data', 'rotate', 'color', 'hover'],
 }
 </script>
 <style scoped>
@@ -198,11 +198,11 @@ export default {
     transform: rotateY(0deg);
 }
 
-/* .card:hover .card__front {
+.hover-card:hover .card__front {
     transform: rotateY(180deg);
 }
 
-.card:hover .card__back {
+.hover-card:hover .card__back {
     transform: rotateY(0deg);
-} */
+}
 </style>

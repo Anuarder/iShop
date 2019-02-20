@@ -54,7 +54,7 @@
                             <creditCard 
                                 :data="user" 
                                 :rotate="cvcFocus" 
-                                :color="'red'"></creditCard>
+                                color="red"></creditCard>
                         </div>
                         <div class="card-info">
                             <div>
